@@ -18,8 +18,6 @@ function App() {
       .then((response) => {
         console.log("Fetched movies:", response.data);
         setMovies(response.data);
-
-        // Extract unique years directly from movie.year
         const extractedYears = [
           ...new Set(response.data.map((movie) => movie.year)),
         ].filter(Boolean);
